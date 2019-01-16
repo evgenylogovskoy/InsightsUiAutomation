@@ -14,9 +14,6 @@ Current test framework is based on next technologies:
 # After test execution you can see html report
         /target/cucumber-htmlreport/index.html
 
-# Troubleshooting
-If webdriver files were not downloaded automatically, run
-          - *mvn verify*
 
 If you have some additional questions, feel free to ask.
 Thanks
