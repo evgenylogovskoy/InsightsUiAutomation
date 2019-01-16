@@ -1,0 +1,5 @@
+<Configuration>
+  <url>https://insights.controlup.com</url>
+  <login>NewInsightsTest@gmail.com</login>
+  <password>Test123456!</password>
+</Configuration>
