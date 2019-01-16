@@ -17,6 +17,7 @@ Current test framework is based on next technologies:
 # Troubleshooting
 If webdriver files were not downloaded automatically, run
         mvn verify
+
 If you have some additional questions, feel free to ask.
 Thanks
 
