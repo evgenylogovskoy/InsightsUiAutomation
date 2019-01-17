@@ -6,8 +6,9 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.io.File;
+
+
 
 /**
  * Created by logovskoy
@@ -48,6 +49,7 @@ public class HomePage extends BasePage {
     public void isMainPageLoaded() {
         try {
             Waiters.waitAppearanceOf(15, label_loggedUserName);
+
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Login page was not loaded");

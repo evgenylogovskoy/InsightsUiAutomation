@@ -2,7 +2,7 @@
 
 This is test task for AQA engineer position.
 Current test framework is based on next technologies:
-  - Java
+  - Java 8
   - Selenium framework
   - Cucumber framework
   - Spring framework
