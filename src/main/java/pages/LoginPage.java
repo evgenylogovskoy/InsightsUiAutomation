@@ -12,7 +12,7 @@ import static helpers.Tools.getDriver;
 /**
  * Created by logovskoy
  */
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
 
     @FindBy(id = "SignInUserName")
@@ -26,69 +26,73 @@ public class LoginPage extends BasePage{
     private WebElement button_signInBtn;
 
 
-    public void logInToTheSystem(String userName, String password){
-        try{
-            Waiters.waitAppearanceOf(5,button_signInBtn);
+    public void logInToTheSystem(String userName, String password) {
+        try {
+            Waiters.waitAppearanceOf(GlobalValues.defaultTimeout, button_signInBtn);
             textBox_logInField.sendKeys(userName);
             textBox_passwordField.sendKeys(password);
             button_signInBtn.click();
-            Waiters.waitDisappearsOf(15,button_signInBtn,5);
+            Waiters.waitDisappearsOf(GlobalValues.defaultTimeout, button_signInBtn, GlobalValues.defaultTimeout);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            Assert.assertTrue("Login was not successfull ",false);
+            Assert.assertTrue("Login was not successfull ", false);
         }
     }
 
-    public void enterLogIn(String logIn){
-        try{
+    public void enterLogIn(String logIn) {
+        try {
             textBox_logInField.sendKeys(logIn);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            Assert.assertTrue("Login wasn't entered into login text field",false);
+            Assert.assertTrue("Login wasn't entered into login text field", false);
         }
     }
 
-    public void enterPassword(String password){
+    public void enterPassword(String password) {
 
-        try{
+        try {
             textBox_passwordField.sendKeys(password);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            Assert.assertTrue("Password wasn't entered into password text field",false);}
+            Assert.assertTrue("Password wasn't entered into password text field", false);
+        }
 
     }
-    public void clickOnSubmitButton(){
 
-        try{
+    public void clickOnSubmitButton() {
+
+        try {
             button_signInBtn.click();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            Assert.assertTrue("Button Submit wasn't clicked on login page",false);
+            Assert.assertTrue("Button Submit wasn't clicked on login page", false);
         }
 
     }
-    public void goToLoginPage(){
 
-        try{
+    public void goToLoginPage() {
+
+        try {
             getDriver().navigate().to(GlobalValues.URL);
-            Waiters.waitForElement(60,button_signInBtn);
+            Waiters.waitForElement(GlobalValues.defaultTimeout * 4, button_signInBtn);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            Assert.assertTrue("Some issue happened while trying to navigate to login page. Exception: "+e.getMessage(),false);
+            Assert.assertTrue("Some issue happened while trying to navigate to login page. Exception: " + e.getMessage(), false);
         }
     }
-    public void isLoginPageLoaded(){
-        try{
-            Waiters.waitForElement(30,button_signInBtn);
 
-        } catch (Exception e){
+    public void isLoginPageLoaded() {
+        try {
+            Waiters.waitForElement(GlobalValues.defaultTimeout * 2, button_signInBtn);
+
+        } catch (Exception e) {
             e.printStackTrace();
-            Assert.assertTrue("Login page was not loaded",false);
+            Assert.assertTrue("Login page was not loaded", false);
         }
     }
 

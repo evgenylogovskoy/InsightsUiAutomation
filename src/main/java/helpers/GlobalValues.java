@@ -18,7 +18,7 @@ public class GlobalValues extends  Tools {
     public static String USERNAME = "";
     public static String PASSWORD ="";
     public static boolean isCacheDirty = false;
-
+    public static final int defaultTimeout = 15;
 
     static {
         /*

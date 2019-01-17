@@ -23,6 +23,7 @@ public class HomePageStepDef {
     @And("^I'm on the \"([^\"]*)\" report page$")
     public void iMOnTheReportPage(String sesionName) {
         homePage.checkThatRequredUserActivitySessionIsSelected(sesionName);
+        homePage.checkThatReuiredActivitySessionTitleIsDisplayed(sesionName);
     }
 
     @And("^Report default time preset is one year$")
@@ -37,6 +38,7 @@ public class HomePageStepDef {
 
     @When("^I click on \"([^\"]*)\" and then choose \"([^\"]*)\"$")
     public void iClickOnAndThenChoose(String arg0, String arg1)  {
+        homePage.cleanDefaultDownloadFolder("CU Insights");
         homePage.exportFileInCSV();
     }
 

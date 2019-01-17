@@ -76,8 +76,8 @@ public abstract class Tools {
                     .usingAnyFreePort()
                     .usingDriverExecutable(new File(driverPath));
             Tools.driver = new ChromeDriver(serviceBuilder.build(), dc);
-            Tools.driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-            Tools.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+            Tools.driver.manage().timeouts().implicitlyWait(GlobalValues.defaultTimeout, TimeUnit.SECONDS);
+            Tools.driver.manage().timeouts().pageLoadTimeout(GlobalValues.defaultTimeout*4, TimeUnit.SECONDS);
             String url = GlobalValues.URL;
             Tools.driver.get(url);
 
